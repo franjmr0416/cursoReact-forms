@@ -1,7 +1,11 @@
 import { useState } from "react";
 
 const App = () => {
-  const [value, setValue] = useState({ normal: "placeholder", texto: "" });
+  const [value, setValue] = useState({
+    normal: "placeholder",
+    texto: "",
+    select: "",
+  });
 
   const handleChange = (e) => {
     //se hace una copia de value y se actualiza la propiedad
@@ -19,6 +23,12 @@ const App = () => {
         onChange={handleChange}
       />
       <textarea name="texto" onChange={handleChange} value={value.texto} />
+      <select value={value.select} name="select" onChange={handleChange}>
+        <option value="">--Seleccione--</option>
+        <option value="opcion1">opcion 1</option>
+        <option value="opcion2">opcion 2</option>
+        <option value="opcion3">opcion 3</option>
+      </select>
     </div>
   );
 };
