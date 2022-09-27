@@ -6,6 +6,7 @@ const App = () => {
     texto: "",
     select: "",
     check: false,
+    color: "azul",
   });
 
   const handleChange = ({ target }) => {
@@ -44,6 +45,34 @@ const App = () => {
         onChange={handleChange}
         checked={value.check}
       />
+
+      <div>
+        <label>Color</label>
+        <input
+          onChange={handleChange}
+          type="radio"
+          value="azul"
+          name="color"
+          checked={value.color === "azul"}
+        />
+        Azul
+        <input
+          onChange={handleChange}
+          type="radio"
+          value="verde"
+          name="color"
+          checked={value.color === "verde"}
+        />
+        Verde
+        <input
+          onChange={handleChange}
+          type="radio"
+          value="amarillo"
+          name="color"
+          checked={value.color === "amarillo"}
+        />
+        Amarillo
+      </div>
     </div>
   );
 };
